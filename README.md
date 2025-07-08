@@ -31,7 +31,7 @@ Deploying a **Flask app on AWS EC2** using **Docker, Terraform, and GitHub Actio
 
 ---
 
-##Project Structure
+## Project Structure
 
 CloudFlask-AutoDeploy/
 ├── app/
