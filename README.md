@@ -1,10 +1,11 @@
-# CloudFlask-AutoDeploy 🚀
+# 🚀 CloudFlask-AutoDeploy
 
 A **DevOps CI/CD project** by **Vishal Yadav**, demonstrating **automated deployment of a Flask app on AWS EC2 using Docker, Terraform, GitHub Actions, and GHCR**.
 
 ---
 
-##  Author
+## 👤 Author
+
 - **Name:** Vishal Yadav
 - **Phone:** 7841048227
 - **Email:** devops.vishal8227@gmail.com
@@ -14,126 +15,137 @@ A **DevOps CI/CD project** by **Vishal Yadav**, demonstrating **automated deploy
 
 ## 📌 Project Objective
 
-To **learn and practice real-world DevOps** by:
-✅ Building a Python Flask app.  
-✅ Provisioning AWS EC2 using Terraform.  
-✅ Containerizing with Docker & Docker Compose.  
-✅ Automating deployments using GitHub Actions and GHCR.
+Deploy a **Flask app on AWS EC2 with automated CI/CD pipelines** to learn and practice **real-world DevOps workflows**.
 
 ---
 
 ## 🚀 Tech Stack
 
-✅ AWS EC2 – Cloud hosting  
-✅ Terraform – Infrastructure as Code (IaC)  
-✅ Docker & Docker Compose – Containerization  
-✅ GitHub Actions – CI/CD pipelines  
-✅ GitHub Container Registry (GHCR) – Image registry  
-✅ Flask – Python micro web framework
+- **AWS EC2** – Cloud hosting
+- **Terraform** – Infrastructure as Code
+- **Docker & Docker Compose** – Containerization
+- **GitHub Actions** – CI/CD pipeline automation
+- **GHCR** – GitHub Container Registry
+- **Flask** – Python micro web framework
 
 ---
 
-## 🛠️ Step-by-Step Implementation
+## 🛠️ Step-by-Step Workflow
 
-### ✅ 1️⃣ Created Flask Application
-- Developed `app/app.py` displaying “Hello, DevOps-Flask-Demo!”.
-- Added `requirements.txt` for dependencies.
+### ✅ 3️⃣ Docker Compose
 
-### ✅ 2️⃣ Containerized with Docker
-- Wrote `Dockerfile` for Flask app.
-- Built and tested locally using:
-  ```bash
-  docker build -t flaskapp .
-  docker run -p 5000:5000 flaskapp
+**Why?** Simplifies running and managing containers, allows scaling later, and follows DevOps best practices.
 
-#Added Docker Compose
+Created `docker-compose.yml`:
+```yaml
+version: '3'
+services:
+  flaskapp:
+    build: .
+    ports:
+      - "5000:5000"
 
-Created docker-compose.yml for simplified deployment.
+#Run locally:
 
-Provisioned AWS EC2 with Terraform
+docker compose up -d
 
-Wrote terraform/main.tf, variables.tf, outputs.tf.
+## Terraform Provisioning on AWS
+**Provision EC2 instance and security groups using:**
 
-#Ran:
+main.tf
 
+variables.tf
+
+outputs.tf
+
+**Commands**
 
 terraform init
 terraform apply
-
-Installed Docker on EC2
-
+## Docker Setup on EC2
 SSH into EC2:
 
 ssh -i nv-key.pem ubuntu@<EC2-PUBLIC-IP>
 
 
-#Installed Docker:
+## Install Docker:
 
 sudo apt update
 sudo apt install docker.io -y
 sudo systemctl enable docker
 sudo systemctl start docker
 
-#Configured Git & GitHub
+
+## Git & GitHub Integration
+Pushed project to:
+
+https://github.com/Vishalyadav933/CloudFlask-AutoDeploy
+
+**Commands:**
 
 git init
-git remote add origin https://github.com/Vishalyadav933/CloudFlask-AutoDeploy.git    # Committed and pushed code.
-
-#Set Up GitHub Actions CI/CD
-
-Created .github/workflows/deploy.yml:
-
- #On push to main:
-
-Builds Docker image.
-
-Pushes to GHCR.
-
-SSH into EC2.
-
-Pulls latest image and restarts using Docker Compose.
-
-Verified Deployment: http://<EC2-PUBLIC-IP>:5000
+git remote add origin <repo-url>
+git add .
+git commit -m "Initial commit"
+git push -u origin main 
 
 
+## GitHub Actions CI/CD Pipeline
+Added .github/workflows/deploy.yml to automate:
 
-#Project Structure:
+Build Docker image
 
+Push to GHCR
+
+SSH into EC2
+
+Pull and restart container automatically
+
+## Verification
+**Access your deployed Flask app:**
+
+http://<EC2-PUBLIC-IP>:5000
+to verify automated CI/CD deployment
+
+
+# Project Structure
 CloudFlask-AutoDeploy/
 │
-├── app/
+├── app/                       # Flask app with Docker
 │   ├── app.py
 │   ├── requirements.txt
 │   ├── Dockerfile
-│   └── docker-compose.yml
+│   └── docker-compose.yml     # ✅ 3️⃣ Docker Compose
 │
-├── terraform/
+├── terraform/                 # ✅ 4️⃣ Terraform AWS Provisioning
 │   ├── main.tf
 │   ├── variables.tf
 │   ├── outputs.tf
 │
 └── .github/
     └── workflows/
-        └── deploy.yml
+        └── deploy.yml         # ✅ 7️⃣ GitHub Actions CI/CD Pipeline
 
 
-#Features:
+## Features
+CI/CD pipeline for Flask app on AWS EC2
 
-✅ End-to-end CI/CD pipeline for Flask app.
-✅ Containerized deployment ensuring consistency.
-✅ Infrastructure as Code for AWS provisioning.
-✅ Uses free, industry-standard DevOps tools.
-✅ Suitable for resume and LinkedIn portfolio projects.
+Infrastructure management with Terraform
 
-What i learned:
+Containerization with Docker & Docker Compose
 
-✅ Hands-on AWS provisioning with Terraform.
-✅ Docker image building and management.
-✅ Configuring CI/CD using GitHub Actions.
-✅ Managing cloud permissions, SSH keys, and deployments.
-✅ Debugging real-world deployment issues.
+Automated deployment with GitHub Actions + GHCR
+
+Clean, repeatable DevOps workflow
 
 
-#License:
+## Licine
+This project is created for learning, DevOps practice, and portfolio building.
 
-This project is for learning, practice, and portfolio building only by Vishal Yadav.
+
+## Push to GitHub:
+After adding this file:
+
+git add README.md
+git commit -m "Add final structured README with workflow and features"
+git push origin main
