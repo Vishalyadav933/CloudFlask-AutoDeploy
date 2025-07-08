@@ -20,38 +20,18 @@ Deploying a **Flask app on AWS EC2** using **Docker, Terraform, and GitHub Actio
 
 ---
 
-**Deployed App:** http://<EC2-PUBLIC-IP>:5000
+## Tech Stack
+
+- **AWS EC2** – Cloud hosting
+- **Terraform** – Infrastructure as Code
+- **Docker & Docker Compose** – Containerization
+- **GitHub Actions** – CI/CD pipeline automation
+- **GHCR** – GitHub Container Registry
+- **Flask** – Python micro web framework
 
 ---
 
-## License
-
-This project is licensed for **learning and portfolio building** by Vishal Yadav.
-
----
-# CloudFlask-AutoDeploy
-
-Deploying a **Flask app on AWS EC2** using **Docker, Terraform, and GitHub Actions** with CI/CD.
-
----
-
-## Author
-
-- **Name:** Vishal Yadav
-- **Email:** devops.vishal8227@gmail.com
-- **Phone:** 7841048227
-
----
-
-## Overview
-
-- Flask app containerized with Docker
-- Provisioned on AWS EC2 with Terraform
-- Automated deployment with GitHub Actions
-
----
-
-## Project Structure
+##Project Structure
 
 CloudFlask-AutoDeploy/
 ├── app/
@@ -68,3 +48,13 @@ CloudFlask-AutoDeploy/
 └── deploy.yml
 
 ---
+
+## License
+
+This project is licensed for **learning and portfolio building** by **Vishal Yadav.**
+
+---
+
+
+
+
