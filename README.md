@@ -1,151 +1,70 @@
-# 🚀 CloudFlask-AutoDeploy
+# CloudFlask-AutoDeploy
 
-A **DevOps CI/CD project** by **Vishal Yadav**, demonstrating **automated deployment of a Flask app on AWS EC2 using Docker, Terraform, GitHub Actions, and GHCR**.
+Deploying a **Flask app on AWS EC2** using **Docker, Terraform, and GitHub Actions** with CI/CD.
 
 ---
 
-## 👤 Author
+## Author
 
 - **Name:** Vishal Yadav
-- **Phone:** 7841048227
 - **Email:** devops.vishal8227@gmail.com
-- [GitHub](https://github.com/Vishalyadav933)
+- **Phone:** 7841048227
 
 ---
 
-## 📌 Project Objective
+## Overview
 
-Deploy a **Flask app on AWS EC2 with automated CI/CD pipelines** to learn and practice **real-world DevOps workflows**.
-
----
-
-## 🚀 Tech Stack
-
-- **AWS EC2** – Cloud hosting
-- **Terraform** – Infrastructure as Code
-- **Docker & Docker Compose** – Containerization
-- **GitHub Actions** – CI/CD pipeline automation
-- **GHCR** – GitHub Container Registry
-- **Flask** – Python micro web framework
+- Flask app containerized with Docker
+- Provisioned on AWS EC2 with Terraform
+- Automated deployment with GitHub Actions
 
 ---
 
-## 🛠️ Step-by-Step Workflow
+**Deployed App:** http://<EC2-PUBLIC-IP>:5000
 
-### ✅ 3️⃣ Docker Compose
+---
 
-**Why?** Simplifies running and managing containers, allows scaling later, and follows DevOps best practices.
+## License
 
-Created `docker-compose.yml`:
-```yaml
-version: '3'
-services:
-  flaskapp:
-    build: .
-    ports:
-      - "5000:5000"
+This project is licensed for **learning and portfolio building** by Vishal Yadav.
 
-### ✅ 3️⃣ Run locally:
+---
+# CloudFlask-AutoDeploy
 
-docker compose up -d
+Deploying a **Flask app on AWS EC2** using **Docker, Terraform, and GitHub Actions** with CI/CD.
 
-### ✅ 3️⃣  Terraform Provisioning on AWS
-**Provision EC2 instance and security groups using:**
+---
 
-main.tf
+## Author
 
-variables.tf
+- **Name:** Vishal Yadav
+- **Email:** devops.vishal8227@gmail.com
+- **Phone:** 7841048227
 
-outputs.tf
+---
 
-**Commands**
+## Overview
 
-terraform init
-terraform apply
-### ✅ 3️⃣  Docker Setup on EC2
-SSH into EC2:
+- Flask app containerized with Docker
+- Provisioned on AWS EC2 with Terraform
+- Automated deployment with GitHub Actions
 
-ssh -i nv-key.pem ubuntu@<EC2-PUBLIC-IP>
+---
 
+## Project Structure
 
-### ✅ 3️⃣ Install Docker:
-
-sudo apt update
-sudo apt install docker.io -y
-sudo systemctl enable docker
-sudo systemctl start docker
-
-
-### ✅ 3️⃣ Git & GitHub Integration
-Pushed project to:
-
-https://github.com/Vishalyadav933/CloudFlask-AutoDeploy
-
-**Commands:**
-
-git init
-git remote add origin <repo-url>
-git add .
-git commit -m "Initial commit"
-git push -u origin main 
-
-
-### ✅ 3️⃣ GitHub Actions CI/CD Pipeline
-Added .github/workflows/deploy.yml to automate:
-
-Build Docker image
-
-Push to GHCR
-
-SSH into EC2
-
-Pull and restart container automatically
-
-### ✅ 3️⃣ Verification
-**Access your deployed Flask app:**
-
-http://<EC2-PUBLIC-IP>:5000
-to verify automated CI/CD deployment
-
-
-### ✅ 3️⃣ Project Structure
 CloudFlask-AutoDeploy/
-│
-├── app/                       # Flask app with Docker
-│   ├── app.py
-│   ├── requirements.txt
-│   ├── Dockerfile
-│   └── docker-compose.yml     # ✅ 3️⃣ Docker Compose
-│
-├── terraform/                 # ✅ 4️⃣ Terraform AWS Provisioning
-│   ├── main.tf
-│   ├── variables.tf
-│   ├── outputs.tf
-│
+├── app/
+│ ├── app.py
+│ ├── requirements.txt
+│ ├── Dockerfile
+│ └── docker-compose.yml
+├── terraform/
+│ ├── main.tf
+│ ├── variables.tf
+│ └── outputs.tf
 └── .github/
-    └── workflows/
-        └── deploy.yml         # ✅ 7️⃣ GitHub Actions CI/CD Pipeline
+└── workflows/
+└── deploy.yml
 
-
-### ✅ 3️⃣ Features
-CI/CD pipeline for Flask app on AWS EC2
-
-Infrastructure management with Terraform
-
-Containerization with Docker & Docker Compose
-
-Automated deployment with GitHub Actions + GHCR
-
-Clean, repeatable DevOps workflow
-
-
-### ✅ 3️⃣ Licine
-This project is created for learning, DevOps practice, and portfolio building by vishal Yadav.
-
-
-### ✅ 3️⃣  Push to GitHub:
-After adding this file:
-
-git add README.md
-git commit -m "Add final structured README with workflow and features"
-git push origin main
+---
